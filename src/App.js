@@ -1,23 +1,29 @@
-import logo from "./logo.svg";
+import { useState } from "react";
+
 import "./App.css";
+import Card from "./components/card/Card";
+import LargeHeading from "./UI/LargeHeading";
+import Selection from "./UI/Selection";
 
 function App() {
+  const [current, setCurrent] = useState("opening");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-component">
+      <div className="mtb-10 flex justify-center">
+        <LargeHeading text="Flash cards" />
+      </div>
+      <Selection current={current} setCurrent={setCurrent} />
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "50px",
+        }}
+      >
+        <Card />
+      </div>
     </div>
   );
 }

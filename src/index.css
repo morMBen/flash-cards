@@ -1,13 +1,144 @@
-body {
+:root {
+  --blue: #31bccf;
+  --green: #30664c;
+  --turquoise: #57d7bd;
+  --yellow: #fdbc7a;
+  --pink: #f993a1;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: grey;
+}
+.black {
+  color: #333;
+}
+.yellow {
+  color: var(--yellow);
+}
+.blue {
+  color: var(--blue);
+}
+.white {
+  color: #fff;
+}
+.turquoise {
+  color: var(--turquoise);
+}
+.text-shadow {
+  text-shadow: black 0 0 5px;
+}
+.bg-turquoise {
+  background-color: var(--turquoise);
+}
+.bg-green {
+  background-color: var(--green);
+}
+.bg-yellow {
+  background-color: var(--yellow);
+}
+.bg-pink {
+  background-color: var(--pink);
+}
+.bg-blue {
+  background-color: var(--blue);
+}
+.flex {
+  display: flex;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-5 {
+  padding: 5px;
+}
+.plr-10 {
+  padding: 0 10px;
+}
+.ptb-10 {
+  padding: 10px 0;
+}
+.plr-5 {
+  padding: 0 5px;
+}
+.ptb-5 {
+  padding: 5px 0;
+}
+.mlr-10 {
+  margin: 0 10px;
+}
+.mtb-10 {
+  margin: 10px 0;
+}
+.shadow {
+  box-shadow: black 0px 0 5px;
+}
+.ls-5 {
+  letter-spacing: 5px;
+}
+.font-12 {
+  font-size: 12px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-18 {
+  font-size: 18px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.font-25 {
+  font-size: 25px;
+}
+.font-30 {
+  font-size: 30px;
+}
+.font-400 {
+  font-weight: 400;
+}
+.font-500 {
+  font-weight: 500;
+}
+.font-600 {
+  font-weight: 600;
+}
+
+.font-800 {
+  font-weight: 800;
+}
+.bold {
+  font-weight: bold;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.border {
+  border: solid 1px #333;
+}
+.radius-5 {
+  border-radius: 5px;
+}
+.radius-10 {
+  border-radius: 10px;
+}
+.pointer {
+  cursor: pointer;
 }
