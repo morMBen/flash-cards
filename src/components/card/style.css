@@ -1,9 +1,9 @@
 .card-container {
-  width: 250px;
-  height: 350px;
+  width: 275px;
+  height: 300px;
   padding: 30px;
-  background: var(--turquoise);
   border: 2px;
   border-radius: 15px;
   border: 8px var(--green) double;
+  transition: ease-in 0.2s all;
 }

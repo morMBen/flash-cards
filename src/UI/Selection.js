@@ -1,42 +1,45 @@
 import React from "react";
 
-import { messages, buttonTexts, onClick } from "../constants/messages";
+import buttonsFlow from "../utils/buttonsFlow";
 import MediumHeading from "../UI/MediumHeading";
 import Button from "../UI/button/Button";
 const Selection = ({ current, setCurrent }) => {
   return (
     <div>
       <div className="mtb-10 flex justify-center">
-        <MediumHeading addClass="white text-shadow " text={messages[current]} />
+        <MediumHeading
+          addClass="white text-shadow "
+          text={buttonsFlow[current].message}
+        />
       </div>
       <div className="mtb-10 flex justify-center">
         <div className="plr-10">
           <Button
-            text={buttonTexts[current].left}
+            text={buttonsFlow[current].buttons.left}
             addClass="bg-green border white"
             onClick={() => {
-              setCurrent(onClick[current].left);
+              setCurrent(buttonsFlow[current].onClick.left);
             }}
           />
         </div>
-        {buttonTexts[current].num > 2 && (
+        {buttonsFlow[current].buttons.num > 2 && (
           <div className="plr-10">
             <Button
-              text={buttonTexts[current].center}
+              text={buttonsFlow[current].buttons.center}
               addClass="bg-yellow border"
               onClick={() => {
-                setCurrent(onClick[current].center);
+                setCurrent(buttonsFlow[current].onClick.center);
               }}
             />
           </div>
         )}
-        {buttonTexts[current].num > 1 && (
+        {buttonsFlow[current].buttons.num > 1 && (
           <div className="plr-10">
             <Button
-              text={buttonTexts[current].right}
+              text={buttonsFlow[current].buttons.right}
               addClass="bg-pink border"
               onClick={() => {
-                setCurrent(onClick[current].right);
+                setCurrent(buttonsFlow[current].onClick.right);
               }}
             />
           </div>

@@ -1,14 +1,21 @@
-import React from "react";
 import MediumHeading from "../../UI/MediumHeading";
 
 import "./style.css";
 
-const Card = ({ text }) => {
+const Card = ({ frontText, backText, isFronText, setIsFronText }) => {
   return (
-    <div className="card-container flex align-center justify-center">
+    <div
+      onClick={() => {
+        setIsFronText(!isFronText);
+      }}
+      className={`card-container flex align-center justify-center capitalize ${
+        isFronText ? "bg-turquoise" : "bg-white"
+      }`}
+    >
       <MediumHeading
         addClass="black "
-        text="how old are you ddsaf ad fsadfsadf fasf asdf asdfa sfas fsad fadsfasfadsf asdf asdf asdf asdf asdfdsaf sa"
+        text={isFronText ? frontText : backText}
+        backText={backText}
       />
     </div>
   );

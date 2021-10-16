@@ -2,8 +2,10 @@ import { useState } from "react";
 
 import "./App.css";
 import Card from "./components/card/Card";
+import Button from "./UI/button/Button";
 import LargeHeading from "./UI/LargeHeading";
 import Selection from "./UI/Selection";
+import CardConsole from "./components/cardsConsole/CardsConsole";
 
 function App() {
   const [current, setCurrent] = useState("opening");
@@ -14,16 +16,8 @@ function App() {
         <LargeHeading text="Flash cards" />
       </div>
       <Selection current={current} setCurrent={setCurrent} />
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "50px",
-        }}
-      >
-        <Card />
-      </div>
+
+      <CardConsole />
     </div>
   );
 }

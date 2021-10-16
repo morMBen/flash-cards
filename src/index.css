@@ -4,6 +4,8 @@
   --turquoise: #57d7bd;
   --yellow: #fdbc7a;
   --pink: #f993a1;
+  --white: #fff;
+  --black: #333;
 }
 * {
   box-sizing: border-box;
@@ -24,7 +26,7 @@ body {
   color: var(--blue);
 }
 .white {
-  color: #fff;
+  color: var(--white);
 }
 .turquoise {
   color: var(--turquoise);
@@ -32,8 +34,14 @@ body {
 .text-shadow {
   text-shadow: black 0 0 5px;
 }
+.bg-white {
+  background-color: var(--white);
+}
 .bg-turquoise {
   background-color: var(--turquoise);
+}
+.bg-black {
+  background-color: var(--black);
 }
 .bg-green {
   background-color: var(--green);
@@ -46,6 +54,10 @@ body {
 }
 .bg-blue {
   background-color: var(--blue);
+}
+
+.text-align {
+  text-align: center;
 }
 .flex {
   display: flex;
