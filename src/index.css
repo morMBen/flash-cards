@@ -19,6 +19,9 @@ body {
 .black {
   color: #333;
 }
+.pink {
+  color: var(--pink);
+}
 .yellow {
   color: var(--yellow);
 }

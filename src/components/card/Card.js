@@ -2,9 +2,17 @@ import MediumHeading from "../../UI/MediumHeading";
 
 import "./style.css";
 
-const Card = ({ frontText, backText, isFronText, setIsFronText }) => {
+const Card = ({
+  frontText,
+  backText,
+  isFronText,
+  setIsFronText,
+  style = null,
+  textStyle = null,
+}) => {
   return (
     <div
+      style={style}
       onClick={() => {
         setIsFronText(!isFronText);
       }}
@@ -13,6 +21,7 @@ const Card = ({ frontText, backText, isFronText, setIsFronText }) => {
       }`}
     >
       <MediumHeading
+        style={textStyle}
         addClass="black "
         text={isFronText ? frontText : backText}
         backText={backText}

@@ -3,4 +3,10 @@ const iterateArr = (length, index, plusOrMinus) => {
   if (index === length - 1 && plusOrMinus === "+") return 0;
   return plusOrMinus === "+" ? index + 1 : index - 1;
 };
-export { iterateArr };
+const removeIndexFromArr = (arr, index) => {
+  arr.splice(index, 1);
+  console.log(arr);
+  return arr;
+};
+
+export { iterateArr, removeIndexFromArr };
