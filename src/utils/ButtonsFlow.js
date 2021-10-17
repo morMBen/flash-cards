@@ -1,3 +1,4 @@
+import { deleteCard } from "./api/Api";
 const opening = {
   message: `Hey there let's start...`,
   buttons: { left: "start training", right: "Manege cards", num: 2 },
@@ -32,8 +33,23 @@ const cardsManegement = {
 };
 const cardEdit = {
   message: "Edit / Delete the card you want",
-  buttons: { left: "confirm", right: "cancel", num: 2 },
-  onClick: { left: "...", right: "opening" },
+  buttons: {
+    left: "confirm",
+    center: "edit",
+    centerRight: "delete",
+    right: "cancel",
+    num: 4,
+  },
+  onClick: {
+    left: "...",
+    center: "",
+    centerRight: async (allCards, setAllCards, currentCardSelected) => {
+      allCards.splice(currentCardSelected, 1);
+      await setAllCards(allCards);
+      console.log(await deleteCard(allCards[currentCardSelected].id));
+    },
+    right: "opening",
+  },
 };
 const categoryEdit = {
   message: "Edit",

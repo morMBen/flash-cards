@@ -3,7 +3,13 @@ import React from "react";
 import buttonsFlow from "../utils/buttonsFlow";
 import MediumHeading from "../UI/MediumHeading";
 import Button from "../UI/button/Button";
-const Selection = ({ current, setCurrent }) => {
+const Selection = ({
+  current,
+  setCurrent,
+  allCards,
+  setAllCards,
+  currentCardSelected,
+}) => {
   return (
     <div>
       <div className="mtb-10 flex justify-center">
@@ -28,7 +34,32 @@ const Selection = ({ current, setCurrent }) => {
               text={buttonsFlow[current].buttons.center}
               addClass="bg-yellow border"
               onClick={() => {
-                setCurrent(buttonsFlow[current].onClick.center);
+                if (typeof buttonsFlow[current].onClick.center == "string") {
+                  setCurrent(buttonsFlow[current].onClick.center);
+                } else {
+                  buttonsFlow[current].onClick.center();
+                }
+              }}
+            />
+          </div>
+        )}
+        {buttonsFlow[current].buttons.num > 3 && (
+          <div className="plr-10">
+            <Button
+              text={buttonsFlow[current].buttons.centerRight}
+              addClass="bg-red border"
+              onClick={() => {
+                if (
+                  typeof buttonsFlow[current].onClick.centerRight == "string"
+                ) {
+                  setCurrent(buttonsFlow[current].onClick.centerRight);
+                } else {
+                  buttonsFlow[current].onClick.centerRight(
+                    allCards,
+                    setAllCards,
+                    currentCardSelected
+                  );
+                }
               }}
             />
           </div>

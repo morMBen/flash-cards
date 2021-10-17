@@ -1,50 +1,38 @@
 import React from "react";
-import { useState, useEffect, Fragment } from "react";
+import { useState } from "react";
 import Card from "../card/Card";
-import { fetchAllCards } from "../../utils/api/Api";
+import "./style.css";
 
-const CardsList = () => {
-  const [allCards, setAllCards] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [currentSelected, setCurrentSelected] = useState(null);
+const CardsList = ({
+  currentCardSelected,
+  setCurrentCardSelected,
+  allCards,
+}) => {
   const [isFrontText, setIsFrontText] = useState(true);
-  useEffect(() => {
-    const asyncFunc = async () => {
-      const data = await fetchAllCards();
-      setAllCards(data);
-      return data;
-    };
-    asyncFunc();
-  }, []);
-  useEffect(() => {
-    if (allCards) {
-      setIsLoading(false);
-    }
-  }, [allCards]);
+
   const showAllCards = () => {
     return allCards.map((e, i) => {
       return (
-        <div style={{ padding: "10px " }}>
+        <div key={i} className="card-list-card">
           <Card
-            key={i}
             frontText={e.frontText}
             backText={e.backText}
-            isFronText={currentSelected !== i ? true : isFrontText}
+            isFronText={currentCardSelected !== i ? true : isFrontText}
             addClass="plr-5"
             setIsFronText={() => {
-              if (currentSelected === i) {
+              if (currentCardSelected === i) {
                 setIsFrontText(!isFrontText);
               } else {
                 setIsFrontText(true);
-                setCurrentSelected(i);
+                setCurrentCardSelected(i);
               }
             }}
             style={{
               width: "150px",
               height: "200px",
-              borderWidth: `${currentSelected === i ? "5px" : "4px"}`,
+              borderWidth: `${currentCardSelected === i ? "5px" : "4px"}`,
               borderColor: `${
-                currentSelected === i ? "var(--blue)" : "var(--green)"
+                currentCardSelected === i ? "var(--blue)" : "var(--green)"
               }`,
             }}
             textStyle={{ fontSize: "12px" }}
@@ -56,7 +44,7 @@ const CardsList = () => {
 
   return (
     <div className="flex wrap justify-center" style={{}}>
-      {!isLoading && showAllCards()}
+      {showAllCards()}
     </div>
   );
 };

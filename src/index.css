@@ -4,6 +4,7 @@
   --turquoise: #57d7bd;
   --yellow: #fdbc7a;
   --pink: #f993a1;
+  --red: #f53851;
   --white: #fff;
   --black: #333;
 }
@@ -39,6 +40,9 @@ body {
 }
 .bg-white {
   background-color: var(--white);
+}
+.bg-red {
+  background-color: var(--red);
 }
 .bg-turquoise {
   background-color: var(--turquoise);
