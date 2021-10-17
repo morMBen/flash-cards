@@ -65,7 +65,9 @@ body {
 .flex {
   display: flex;
 }
-
+.wrap {
+  flex-wrap: wrap;
+}
 .align-center {
   align-items: center;
 }

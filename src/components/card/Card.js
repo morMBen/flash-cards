@@ -16,7 +16,7 @@ const Card = ({
       onClick={() => {
         setIsFronText(!isFronText);
       }}
-      className={`card-container flex align-center justify-center capitalize ${
+      className={`card-container flex align-center justify-center capitalize  ${
         isFronText ? "bg-turquoise" : "bg-white"
       }`}
     >
